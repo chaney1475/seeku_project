@@ -210,43 +210,42 @@
             </style>
 
             <body>
-            <form th:action="@{/alert/field/save}" th:object="${podUsage}" method="post">
-            <div>
-                <label>
-                    Filed Comparison
-                </label>
-            </div>
+            <form th:action="@{/alert/metric/save}" th:object="${metricAlertSettings}" method="post">
+                <div>
+                    <label>
+                        Field Comparison
+                    </label>
+                </div>
 
-            <!-- CPU_USAGE 입력 필드 -->
-            <div class = "metric-input">
-                <label for="cpuUsage">CPU_USAGE:</label>
-                <input type="text" id="cpuUsage" name="cpuUsage"><br>
-            </div>
+                <!-- CPU_USAGE 입력 필드 -->
+                <div class="metric-input">
+                    <label for="cpuUsage">CPU_USAGE:</label>
+                    <input type="text" id="cpuUsage" th:field="*{cpuUsage}"><br>
+                </div>
 
+                <!-- MEMORY_USAGE 입력 필드 -->
+                <div class="metric-input">
+                    <label for="memoryUsage">MEMORY_USAGE :</label>
+                    <input type="text" id="memoryUsage" th:field="*{memoryUsage}"><br>
+                </div>
 
-            <!-- MEMORY_USAGE 입력 필드 -->
-            <div class = "metric-input">
-                <label for="memoryUsage">MEMORY_USAGE :</label>
-                <input type="text" id="memoryUsage" name="memoryUsage"><br>
-            </div>
+                <!-- PROCESS_CPU_USAGE 입력 필드 -->
+                <div class="metric-input">
+                    <label for="processCpuUsage">PROCESS_CPU_USAGE:</label>
+                    <input type="text" id="processCpuUsage" th:field="*{processCpuUsage}"><br>
+                </div>
 
+                <!-- NETWORK_USAGE 입력 필드 -->
+                <div class="metric-input">
+                    <label for="networkUsage">NETWORK_USAGE:</label>
+                    <input type="text" id="networkUsage" th:field="*{networkUsage}"><br>
+                </div>
 
-            <!-- PROCESS_CPU_USAGE 입력 필드 -->
-            <div class = "metric-input">
-                <label for="processCpuUsage">PROCESS_CPU_USAGE:</label>
-                <input type="text" id="processCpuUsage" name="processCpuUsage"><br>
-            </div>
-
-            <!-- NETWORK_USAGE 입력 필드 -->
-            <div class = "metric-input">
-                <label for="networkUsage">NETWORK_USAGE:</label>
-                <input type="text" id="networkUsage" name="networkUsage"><br>
-            </div>
-            <!--Name 입력 필드 -->
-            <div class = "metric-input">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name"><br>
-    </div>
+                <!-- Name 입력 필드 -->
+                <div class="metric-input">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" th:field="*{name}"><br>
+                </div>
             <script>
                 function 저장() {
                     // 입력값 가져오기

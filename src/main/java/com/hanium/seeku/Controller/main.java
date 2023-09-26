@@ -23,16 +23,10 @@ public class main {
     public String getDashboardItems(Model model){
         int namespaceCnt = namespaceService.getNamespaceList().size();
         int deploymentsCnt = podService.getDeploymentsList().getItems().size();
-        int podCnt = podService.getPodList().getItems().size();
+        int podCnt = podService.getPodList().size();
         int replicaCnt = replicaService.getReplicaList().getItems().size();
         int statefulCnt = statefulService.getStatefulList().getItems().size();
         int DemonCnt = daemonService.getDemonList().getItems().size();
-
-
-        System.out.println("DemonCnt = " + DemonCnt);
-        System.out.println("statefulCnt = " + statefulCnt);
-        System.out.println("deploymentsCnt = " + deploymentsCnt);
-        System.out.println("podCnt = " + podCnt);
 
         model.addAttribute("namespace", namespaceCnt);
         model.addAttribute("deployments", deploymentsCnt);
@@ -58,11 +52,6 @@ public class main {
     @GetMapping("dashboard/workloads/daemon")
     public String Daemon(){
         return "dashboard/workloads/Daemon";
-    }
-
-    @GetMapping("dashboard/workloads/pods")
-    public String Pods(){
-        return "dashboard/workloads/Pods";
     }
 
     @GetMapping("dashboard/workloads/replica")
