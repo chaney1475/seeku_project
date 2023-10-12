@@ -16,6 +16,9 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <style>
+    .fixed-width {
+    width: 200px;
+}
         .responsive-table {
             width: 100%;
             overflow-x: auto;
@@ -196,7 +199,7 @@
                 <tbody>
                 <tr th:each="podData : ${podDataList}">
                     <td><a th:href="@{'/dashboard/workloads/pods/details' + ${podData.name}}" th:text="${podData.name}">Pod Name</a></td>
-                    <td th:text="${podData.image}">docker.io/sample-image</td>
+                    <td class="fixed-width" th:text="${podData.image}">docker.io/sample-image</td>
                     <td th:text="${podData.label}">Sample Label</td>
                     <td th:text="${podData.node}">Sample Node</td>
                     <td th:text="${podData.status}">Running</td>

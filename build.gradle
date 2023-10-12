@@ -29,6 +29,7 @@ dependencies {
 	implementation group:'io.fabric8', name: 'kubernetes-client', version:'6.8.1'
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'io.micrometer:micrometer-registry-prometheus'
+	implementation 'org.json:json:20200518'
 
 	compileOnly 'org.projectlombok:lombok'
 

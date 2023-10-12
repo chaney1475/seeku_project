@@ -31,6 +31,7 @@ public class NamespaceService {
             Map<String, String> labelsMap = n.getMetadata().getLabels();
             namespaceData.setLabels(labelsMap != null ? labelsMap.toString() : null);
             namespaceData.setPhase(n.getStatus().getPhase());
+
             namespaceData.setCreationTime(dateUtils.formatDuration(n.getMetadata().getCreationTimestamp()));
             dataList.add(namespaceData);
         }

@@ -210,43 +210,44 @@
             </style>
 
             <body>
-            <form th:action="@{/alert/metric/save}" th:object="${metricAlertSettings}" method="post">
+            <form th:action="@{/alert/field/save}" th:object="${podUsage}" method="post">
                 <div>
                     <label>
-                        Field Comparison
+                        Filed Comparison
                     </label>
                 </div>
 
                 <!-- CPU_USAGE 입력 필드 -->
-                <div class="metric-input">
+                <div class = "metric-input">
                     <label for="cpuUsage">CPU_USAGE:</label>
-                    <input type="text" id="cpuUsage" th:field="*{cpuUsage}"><br>
+                    <input type="text" id="cpuUsage" name="cpuUsage"><br>
                 </div>
+
 
                 <!-- MEMORY_USAGE 입력 필드 -->
-                <div class="metric-input">
+                <div class = "metric-input">
                     <label for="memoryUsage">MEMORY_USAGE :</label>
-                    <input type="text" id="memoryUsage" th:field="*{memoryUsage}"><br>
+                    <input type="text" id="memoryUsage" name="memoryUsage"><br>
                 </div>
 
+
                 <!-- PROCESS_CPU_USAGE 입력 필드 -->
-                <div class="metric-input">
+                <div class = "metric-input">
                     <label for="processCpuUsage">PROCESS_CPU_USAGE:</label>
-                    <input type="text" id="processCpuUsage" th:field="*{processCpuUsage}"><br>
+                    <input type="text" id="processCpuUsage" name="processCpuUsage"><br>
                 </div>
 
                 <!-- NETWORK_USAGE 입력 필드 -->
-                <div class="metric-input">
+                <div class = "metric-input">
                     <label for="networkUsage">NETWORK_USAGE:</label>
-                    <input type="text" id="networkUsage" th:field="*{networkUsage}"><br>
+                    <input type="text" id="networkUsage" name="networkUsage"><br>
                 </div>
-
-                <!-- Name 입력 필드 -->
-                <div class="metric-input">
+                <!--Name 입력 필드 -->
+                <div class = "metric-input">
                     <label for="name">Name:</label>
-                    <input type="text" id="name" th:field="*{name}"><br>
+                    <input type="text" id="name" name="name"><br>
                 </div>
-            <script>
+                <script>
                 function 저장() {
                     // 입력값 가져오기
                     const cpuUsage = document.getElementById("cpuUsage").value;
@@ -266,10 +267,10 @@
                     // 데이터 저장 또는 전송 등의 추가 작업을 수행할 수 있습니다.
                 }
             </script>
-            <!-- 저장 버튼 -->
-            <div class = "metric-input">
-                <button type="submit" style="background-color: #007bff; color: #fff;">Procced to Alert Signal</button>
-            </div>
+                <!-- 저장 버튼 -->
+                <div class = "metric-input">
+                    <button type="submit" style="background-color: #007bff; color: #fff;">Procced to Alert Signal</button>
+                </div>
             </form>
             <!-- JavaScript 코드를 아래에 작성합니다. -->
 
